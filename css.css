@@ -1,0 +1,27 @@
+:root {
+  /*//шрифт*/
+  --font_family_default: 'Roboto', Helvetica, Arial, sans-serif;
+  /*//цвета*/
+  --color_chambray: #374c83; /*//rgba(55, 76, 131, 1)*/
+  --color_error: #c62828; /*//Red 2 rgba(198, 40, 40, 1)*/
+  /*//--текста*/
+  --text_color: #324e6e; /*// Text Primary rgba(50, 78, 110, 1)*/
+  --text_color_header: var(--color_chambray); /*// Primary Titles #1a284d*/
+  /*//--бекграунда*/
+  --bg_color_main: #ffffff;
+  --bg_color_chambray: var(--color_chambray); /*//#374c83*/
+  /*//--границ*/
+  --border_color_shadow: rgba(var(--color_chambray), 0.16); /*//rgba(55, 76, 131, 0.16)*/
+  --border_color_error: rgba(var(--color_error), 0.64); /*//rgba(198, 40, 40, 0.64)*/
+  /*//радиус*/
+  --radius_btn: 4px;
+  /*//сетка*/
+  --main_width: 1440px;
+  --main_margin: 40px;
+  --height_control_elements: 37px;
+  /*//адаптивность*/
+  --breakpoint_mobile: 375px;
+  --breakpoint_desktop: 1440px;
+  /*//анимация*/
+  --transition_base: 0.4s ease;
+}
