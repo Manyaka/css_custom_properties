@@ -54,12 +54,15 @@ body {
   --box-bg: #ddd;
   --box-main-color: #06c;
   --box-padding: 1em 1.5em;
+  --box-shadow-offset-x: 10px;
+  --box-shadow-offset-y: 5px;
+  --box-shadow-blur-radius: 5px;
 
   background-color: var(--box-bg);
   padding: var(--box-padding);
   margin-bottom: 2em;
   border: 1px solid var(--box-main-color);
-  box-shadow: 10px 5px 5px var(--box-main-color);
+  box-shadow: var(--box-shadow-offset-x) var(--box-shadow-offset-y) var(--box-shadow-blur-radius) var(--box-main-color);
 }
 
 .box h2 {
@@ -70,7 +73,8 @@ body {
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
+    grid-gap: calc(var(--gap) * 1em);
+    --gap: 2;
   }
 
   .box {
