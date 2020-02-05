@@ -1,0 +1,169 @@
+:root {
+  --font_family_default: 'Roboto', Helvetica, Arial, sans-serif;
+
+  /*************************** Page-wide variables ****************************/
+  /* Base spacing unit. */
+  --spacing-unit: 6px;
+
+  /* Margin size. No unit, because it's a multiple of the spacing unit. */
+  --margins: 2;
+
+  /* Colors. */
+  --primary-color: #5e35b1;
+  --primary-color-text: #fff;
+
+  /* Number of columns to show. */
+  --grid-columns: 3;
+
+  /***************************** Calculated values ****************************/
+  /* We don't use calc here because we don't want to resolve the values yet.
+     You can think of these as simple textual replacements. */
+
+  /* The size of the margin around the card grid. */
+  --margin-size: var(--margins) * 2;
+  /* How much internal padding each cell should have */
+  --cell-padding: (4 * var(--spacing-unit));
+  /* How big the space between cells should be */
+  --grid-gutter: (var(--margins) * var(--spacing-unit));
+  /* How big the space should be around the grid */
+  --grid-margin: (var(--margin-size) * var(--spacing-unit));
+  /* Calculated cell margin */
+  --cell-margin: (var(--grid-gutter) / 2);
+}
+
+.header {
+  display: block;
+  position: relative;
+  height: calc(28 * var(--spacing-unit));
+  padding-left: calc(4 * var(--spacing-unit));
+  transition: background-color 1s;
+  /* Use a default value for the background color, by passing it in as the 2nd
+     parameter to var(). We don't strictly need it in this case, since we've
+     defined it at the document level, but this illustrates common usage. */
+  background-color: var(--primary-color, #5e35b1);
+}
+
+.title {
+  position: relative;
+  top: calc(8 * var(--spacing-unit));
+  transition: color 1s;
+  color: var(--primary-color-text);
+  font-family: var(--font_family_default);
+  font-size: calc(4 * var(--spacing-unit));
+  font-weight: 400;
+}
+
+.shade {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(8 * var(--spacing-unit));
+  padding-left: calc(1 * var(--spacing-unit));
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  margin: 0;
+  padding: calc(var(--grid-margin) - var(--cell-margin));
+  border: 0 none;
+  background-color: var(--grid-color);
+}
+
+.cell {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: calc(100% / var(--grid-columns) - var(--grid-gutter));
+  margin: calc(var(--cell-margin));
+  background-color: var(--cell-color);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: rgb(97, 97, 97);
+  font-family: var(--font_family_default);
+}
+
+.cell-title {
+  font-size: calc(3 * var(--spacing-unit));
+}
+
+/*TODO если переделать цвета из хекса в ргб, то можно повлиять и на тенюшку и на cell-actions цвет*/
+.cell-header {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  height: calc(12 * var(--spacing-unit));
+  padding-left: calc(var(--cell-padding));
+  background-color: var(--primary-color); /* цвета прописаны в html */
+  color: var(--primary-color-text); /* цвета прописаны в html */
+}
+
+.cell-content {
+  flex-grow: 1;
+  padding: calc(var(--cell-padding));
+  font-size: calc(2.5 * var(--spacing-unit));
+}
+
+.cell-actions {
+  padding: calc(2 * var(--spacing-unit));
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.picker-button {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  padding: calc(2 * var(--spacing-unit));
+  overflow: hidden;
+  transition: background-color 0.2s;
+  border: 1px solid var(--primary-color);
+  border-radius: 2px;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-family: var(--font_family_default);
+  font-size: calc(2 * var(--spacing-unit));
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.picker-button:focus {
+  outline: none;
+}
+
+.picker-button:active {
+  background-color: #dddddd;
+}
+
+.controls {
+  display: flex;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  flex-direction: column;
+  padding: 8px;
+  background-color: rgba(200, 200, 200, 0.8);
+  font-family: var(--font_family_default);
+  font-size: 12px;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  margin: 0 0 8px 0;
+}
+
+.control-key {
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.control-value {
+  width: 152px;
+}
