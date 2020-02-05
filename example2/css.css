@@ -1,9 +1,14 @@
 :root {
   --primaryColor: hsl(165, 60%, 40%);
+  --primaryColorHSL: 165, 60%, 40%;
 }
 
 .link {
   color: var(--linkColor, var(--primaryColor));
+}
+
+.link:hover {
+  --linkColor: hsla(var(--primaryColorHSL), .5);
 }
 
 .button {
@@ -14,4 +19,50 @@
   color: var(--Button-color, white);
   font-size: 0.9em;
   text-align: center;
+}
+
+.button:hover {
+  --Button-backgroundColor: transparent;
+  --Button-color: var(--primaryColor);
+}
+
+.header {
+  --Button-backgroundColor: transparent;
+  --Button-borderColor: currentColor;
+  --Button-color: currentColor;
+  --linkColor: currentColor;
+  --primaryColorHSL: 0, 100%, 100%;
+
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* The styles below aren't relevant to the demo. */
+body {
+  color: #333333;
+  font: 1em/1.25 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+header,
+main {
+  padding: 2em;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 400;
+  margin: 0 0 .25em;
+}
+
+p {
+  max-width: 36em;
+  margin: 0 auto 1em;
+}
+
+button,
+nav > a {
+  display: inline-block;
+  margin: .75em;
 }
