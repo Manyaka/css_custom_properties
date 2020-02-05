@@ -42,19 +42,6 @@ body {
   color: var(--text_color);
 }
 
-@media screen and (min-width: 1440px) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: calc(var(--gap) * 1em);
-    --gap: 2;
-  }
-
-  .box {
-    margin-bottom: 0;
-  }
-}
-
 .box {
   -webkit-box-shadow: 10px 5px 5px black;
   -moz-box-shadow: 10px 5px 5px black;
@@ -100,4 +87,14 @@ section {
 body::after {
   --screen-category: var(--primary-color);
   content: '--screen-category: 'var(--screen-category);
+}
+
+/*темирование*/
+[data-theme="default"] {
+  --color-primary: hsl(220, 90%, 56%);
+  --color-primary-a20: hsla(220, 90%, 56%, 0.2);
+
+  --color-accent-darker: hsl(355, 90%, 41%);
+  --color-accent: hsl(355, 90%, 61%);
+  --color-accent-lighter: hsl(355, 90%, 81%);
 }

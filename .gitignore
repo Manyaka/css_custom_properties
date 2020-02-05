@@ -3,3 +3,6 @@
 *.iml
 out
 gen
+*.map
+dist/
+.sass-cache/
