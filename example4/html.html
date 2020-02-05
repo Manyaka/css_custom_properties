@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-language" content="ru">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example 4</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">CSS Variable Demo</div>
+    <div class="shade"></div>
+
+    <div class="controls">
+      <p class="control">
+        <span class="control-key">Spacing unit:</span>
+        <input class="control-value" type="range" id="quantum" min="4" max="8" step="1">
+      </p>
+      <p class="control">
+        <span class="control-key">Columns:</span>
+        <input class="control-value" type="range" id="columns" min="1" max="4" step="1">
+      </p>
+      <p class="control">
+        <span class="control-key">Margins:</span>
+        <input class="control-value" type="range" id="gutter" min="1" max="5" step="1">
+      </p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="cell" style="--primary-color: #f44336; --primary-color-text: #fff;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Red
+        </div>
+      </header>
+      <main class="cell-content">
+        Click the buttons on the cards to set the default color scheme for the
+        whole sample.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+    <div class="cell" style="--primary-color: #e91e63; --primary-color-text: #fff;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Pink
+        </div>
+      </header>
+      <main class="cell-content">
+        The colors on the cards are not affected because they're individually
+        defined at the card level, and thus prioritised according to standard CSS
+        rules.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+    <div class="cell" style="--primary-color: #9c27b0; --primary-color-text: #fff;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Purple
+        </div>
+      </header>
+      <main class="cell-content">
+        Use the controls above to adjust some properties that affect the entire
+        page.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+    <div class="cell" style="--primary-color: #00bcd4; --primary-color-text: #424242;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Cyan
+        </div>
+      </header>
+      <main class="cell-content">
+        Every size on the page is calculated as a multiple of the spacing unit,
+        so setting the property to a different value resizes all elements.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+    <div class="cell" style="--primary-color: #009688; --primary-color-text: #fff;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Teal
+        </div>
+      </header>
+      <main class="cell-content">
+        Changing the number of columns is done by recalculating the relative size
+        of cells on the grid.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+    <div class="cell" style="--primary-color: #4caf50; --primary-color-text: #424242;">
+      <header class="cell-header">
+        <div class="cell-title">
+          Green
+        </div>
+      </header>
+      <main class="cell-content">
+        Margins adjusts both the spacing around the grid and the gutters inside of
+        it.
+      </main>
+      <div class="cell-actions">
+        <button class="picker-button" type="button">
+          Use this color
+          <span class="ripple"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="js.js"></script>
+</body>
+</html>
