@@ -1,0 +1,17 @@
+:root {
+  --primaryColor: hsl(165, 60%, 40%);
+}
+
+.link {
+  color: var(--linkColor, var(--primaryColor));
+}
+
+.button {
+  padding: 0.75em 2em;
+  border: 1px solid var(--Button-borderColor, var(--primaryColor));
+  border-radius: 0.5em;
+  background: var(--Button-backgroundColor, var(--primaryColor));
+  color: var(--Button-color, white);
+  font-size: 0.9em;
+  text-align: center;
+}
