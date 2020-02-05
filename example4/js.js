@@ -12,10 +12,10 @@ let setDocumentVariable = function(propertyName, value) {
 // Sets the document color scheme to the color scheme of the clicked element.
 // This illustrates how it's easy to make a change affecting a large number of
 // elements by simply changing a few custom properties.
-let chooseDefaultColor = function(event) {
+let chooseDefaultColor = function(evt) {
   // Get the styles for the event target (the clicked button), so we can see
   // what its custom properties are set to.
-  let styles = getComputedStyle(event.target);
+  let styles = getComputedStyle(evt.target);
 
   // Get the values for the button's colours...
   let primary = getVariable(styles, '--primary-color');
@@ -25,21 +25,25 @@ let chooseDefaultColor = function(event) {
   setDocumentVariable('--primary-color-text', text);
 };
 
+let buttonsClickHandler = function(evt) {
+  chooseDefaultColor(evt);
+};
+
 // Initialise page controls.
 window.addEventListener('load', function() {
   // Get the styles for the document.
   // This is where we've chosen to store all the global variables we use.
   let styles = getComputedStyle(document.documentElement);
 
-  let quantum = document.getElementById('quantum');
-  let gutter = document.getElementById('gutter');
-  let columns = document.getElementById('columns');
+  let quantum = document.querySelector('#quantum');
+  let gutter = document.querySelector('#gutter');
+  let columns = document.querySelector('#columns');
 
   // Set up event handlers for buttons.
   let buttons = document.querySelectorAll('.picker-button');
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', chooseDefaultColor);
+    buttons[i].addEventListener('click', buttonsClickHandler);
   }
 
   // Retrieve initial custom property values and update controls.
