@@ -96,3 +96,8 @@ section {
   --box-highlight-text: var(--box-text)' with highlight';
 }
 
+/*debug*/
+body::after {
+  --screen-category: var(--primary-color);
+  content: '--screen-category: 'var(--screen-category);
+}
