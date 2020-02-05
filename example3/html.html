@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-language" content="ru">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example 3</title>
+  <style>
+  :root {
+    --gutter: 1.5em;
+  }
+
+  @media (min-width: 30em) {
+    :root {
+      --gutter: 2em;
+    }
+  }
+
+  @media (min-width: 48em) {
+    :root {
+      --gutter: 3em;
+    }
+  }
+
+  .Container {
+    margin: 0 auto;
+    max-width: 60em;
+    padding: var(--gutter);
+  }
+
+  .Grid {
+    --gutterNegative: calc(-1 * var(--gutter));
+    margin-left: var(--gutterNegative);
+    margin-top: var(--gutterNegative);
+  }
+
+  .Grid-cell {
+    margin-left: var(--gutter);
+    margin-top: var(--gutter);
+  }
+
+  @media (min-width: 48em) {
+    .Grid {
+      display: flex;
+    }
+
+    .Grid-cell {
+      flex: 1;
+    }
+  }
+  </style>
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <header>
+    <hgroup class="Container">
+      <h1>Site Title</h1>
+      <h2>Donec id elit non mi porta.</h2>
+    </hgroup>
+  </header>
+
+  <main class="Container">
+    <div class="Grid">
+      <section class="Grid-cell">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+          amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
+          dui. </p>
+        <a href="#">View details &raquo;</a>
+      </section>
+      <section class="Grid-cell">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+          amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
+          dui. </p>
+        <a href="#">View details &raquo;</a>
+      </section>
+      <section class="Grid-cell">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget
+          quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+          amet risus.</p>
+        <a href="#">View details &raquo;</a>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* The styles below aren't relevant to the demo. */
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  font: 1em/1.25 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header {
+  background-color: hsl(30, 15%, 95%);
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin: .25em 0;
+}
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: hsl(165, 60%, 40%);
+}
