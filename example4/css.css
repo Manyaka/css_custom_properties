@@ -22,13 +22,13 @@
   /* The size of the margin around the card grid. */
   --margin-size: var(--margins) * 2;
   /* How much internal padding each cell should have */
-  --cell-padding: (4 * var(--spacing-unit));
+  --cell-padding: 4 * var(--spacing-unit);
   /* How big the space between cells should be */
-  --grid-gutter: (var(--margins) * var(--spacing-unit));
+  --grid-gutter: var(--margins) * var(--spacing-unit);
   /* How big the space should be around the grid */
-  --grid-margin: (var(--margin-size) * var(--spacing-unit));
+  --grid-margin: var(--margin-size) * var(--spacing-unit);
   /* Calculated cell margin */
-  --cell-margin: (var(--grid-gutter) / 2);
+  --cell-margin: var(--grid-gutter) / 2;
 }
 
 .header {
@@ -82,9 +82,10 @@
   width: calc(100% / var(--grid-columns) - var(--grid-gutter));
   margin: calc(var(--cell-margin));
   background-color: var(--cell-color);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-  0 3px 1px -2px rgba(0, 0, 0, 0.2),
-  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   color: rgb(97, 97, 97);
   font-family: var(--font_family_default);
 }
