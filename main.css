@@ -32,6 +32,8 @@
 
   /* анимация*/
   --transition_base: 0.4s ease;
+
+  --foo: #324e6e !important;
 }
 
 body {
@@ -71,25 +73,26 @@ section {
 
 .foo {
   --gap: 20;
-  margin-top: var(--gap)px; /* the calc() function.*/
-  margin-top: calc(var(--gap) * 1px); /* niiiiice */
+  margin-top: var(--gap) px;
+  margin-bottom: calc(var(--gap) * 1px); /* niiiiice */
 }
 
-.box{
+.box {
   /* The --main-padding variable is used if --box-padding is not defined. */
   padding: var(--box-padding, var(--main-padding));
+
   --box-text: 'This is my box';
   /* Equal to --box-highlight-text:'This is my box with highlight'; */
-  --box-highlight-text: var(--box-text)' with highlight';
+  --box-highlight-text: var(--box-text) ' with highlight';
 }
 
 /*debug*/
 body::after {
   --screen-category: var(--primary-color);
-  content: '--screen-category: 'var(--screen-category);
+  content: '--screen-category: ' var(--screen-category);
 }
 
-/*темирование*/
+/*темизация*/
 [data-theme="default"] {
   --color-primary: hsl(220, 90%, 56%);
   --color-primary-a20: hsla(220, 90%, 56%, 0.2);
