@@ -68,18 +68,18 @@ section {
 
 .foo {
   --side: margin-top;
-  var(--side): 20px;
+  var(--side): 20px; /*syntax error for having an invalid property name.*/
 }
 
 .foo {
   --gap: 20;
-  margin-top: var(--gap) px;
+  margin-top: var(--gap)px; /*invalid value for the margin-top property 20 px*/
   margin-bottom: calc(var(--gap) * 1px); /* niiiiice */
 }
 
 .box {
-  /* The --main-padding variable is used if --box-padding is not defined. */
-  padding: var(--box-padding, var(--main-padding));
+  --looks-valid: 20px;
+  background-color: var(--looks-valid); /*invalid value for background-color - become initial val for bgc*/
 
   --box-text: 'This is my box';
   /* Equal to --box-highlight-text:'This is my box with highlight'; */
